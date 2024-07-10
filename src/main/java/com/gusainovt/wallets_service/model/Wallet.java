@@ -21,6 +21,15 @@ public class Wallet {
     @Column(name = "amount")
     private Long amount;
 
+    public Wallet() {
+
+    }
+
+    public Wallet(UUID walletId, OperationType operationType, Long amount) {
+        this.walletId = walletId;
+        this.operationType = operationType;
+        this.amount = amount;
+    }
 
     public OperationType getOperationType() {
         return operationType;
