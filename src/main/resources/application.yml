@@ -1,0 +1,19 @@
+app:
+  db:
+    host: localhost
+    port: 5432
+    name: wallet-DB
+    username: wallet_user
+    password: wallet
+
+spring:
+  application:
+    name: Wallets Service
+  datasource:
+    url: jdbc:postgresql://${app.db.host}:${app.db.port}/${app.db.name}?ApplicationName=${spring.application.name}
+    username: ${app.db.username}
+    password: ${app.db.password}
+
+spring.liquibase.change-log: classpath:liquibase/changelog-master.yml
+
+
